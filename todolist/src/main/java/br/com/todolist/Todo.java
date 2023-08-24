@@ -8,11 +8,13 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-@Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false)
     private String title;
-@Column(length = 255, nullable = false)
+
+    @Column(nullable = false)
     private String description;
-@Column(nullable = false)
+
+    @Column(nullable = false)
     private StatusEnum status = StatusEnum.NOT_STARTED;
 
     public Todo(String title, String description, StatusEnum status) {
@@ -22,6 +24,10 @@ public class Todo {
     }
 
     public Todo() {
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
